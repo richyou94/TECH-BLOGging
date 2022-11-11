@@ -4,16 +4,14 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 // Make const routes from controller folders
 
-// Make helpers functino from utils/helpers
-
+const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// add helpers inside the create after creating helpers in util folder.
-const hbs = exphbs.create({  });
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Super secret secret',
