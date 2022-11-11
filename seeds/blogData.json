@@ -1,0 +1,17 @@
+[
+    {
+        "name": "TECH Blog example one",
+        "description": "Sample description for TECH blog number one",
+        "user_id": 1
+    },
+    {
+        "name": "TECH Blog example two",
+        "description": "Sample description for TECH blog number two",
+        "user_id": 2
+    },
+    {
+        "name": "TECH Blog example three",
+        "description": "Sample description for TECH blog number three",
+        "user_id": 3
+    }
+]
