@@ -1,0 +1,26 @@
+{
+  "name": "tech-blogging",
+  "version": "1.0.0",
+  "description": "Blogging website for TECH's topic",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YichanYouRichard/TECH-BLOGging.git"
+  },
+  "author": "Richard You",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YichanYouRichard/TECH-BLOGging/issues"
+  },
+  "homepage": "https://github.com/YichanYouRichard/TECH-BLOGging#readme",
+  "dependencies": {
+    "connect-session-sequelize": "^7.1.5",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3"
+  }
+}
