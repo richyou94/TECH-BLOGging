@@ -6,8 +6,7 @@ const exphbs = require('express-handlebars');
 
 // Make helpers functino from utils/helpers
 
-// Make sequelize from config/connection sequelize.
-
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
