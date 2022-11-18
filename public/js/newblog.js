@@ -4,7 +4,7 @@ const newBlogHandler = async (event) => {
     const title = document.querySelector('#newblog-title').value.trim();
     const description = document.querySelector('#newblog-description').value.trim();
 
-    await fetch('/api/post', {
+    await fetch('/api/blogs', {
         method: 'POST',
         body: JSON.stringify({
             title,

@@ -41,15 +41,15 @@
               <li class="nav-item">
                 <a class="nav-link bigger-text" href="/dashboard">DASHBOARD</a>
               </li>
-              {{#if loggedIn}}
-              <li class="nav-item">
-                <a class="nav-link bigger-text" href="/login">LOGIN</a>
-              </li>
-              {{else}}
+              {{#if logged_in}}
               <li class="nav-item">
                 <a class="nav-link bigger-text" id="logout">LOGOUT</a>
               </li>
               <script src="./js/logout.js"></script>
+              {{else}}
+              <li class="nav-item">
+                <a class="nav-link bigger-text" href="/login">LOGIN</a>
+              </li>
               {{/if}}
               
             </ul>
