@@ -7,8 +7,8 @@ const newBlogHandler = async (event) => {
     await fetch('/api/blogs', {
         method: 'POST',
         body: JSON.stringify({
-            title,
-            description,
+            name: title,
+            description: description,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
