@@ -1,0 +1,61 @@
+.bigger-text {
+    font-size: 2rem;
+}
+.nav-item {
+    padding: 0px 10px;
+}
+.navbar-brand {
+    padding: 0px 20px;
+}
+
+@media (min-width: 40rem) {
+    .bigger-text {
+        font-size: 1.7rem;
+    }
+}
+
+.testred {
+    background-color: red;
+}
+
+.hidden {
+    display: none;    
+}
+
+.card-header {
+    display: block;
+    justify-content: space-between;
+    padding-bottom: 0px;    
+}
+
+.card-header h3,
+.card-header p {
+    vertical-align: middle;
+}
+
+.card-header p {
+    padding-top: 1px;
+}
+.card {
+    margin: 4vh auto;
+    max-width: 1200px;
+}
+
+.main-container {
+    min-height: 83vh;
+}
+
+.btn-add-post {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.dashboard-nopost {
+    margin: auto;
+    text-align: center;
+    margin-top:2rem;
+}
+
+.btn-login {
+    width: 100%;
+}
