@@ -1,12 +1,16 @@
 <div class="container-fluid main-container">
+    {{#each blogs as |blog|}}
     <div class="card">
         <div class="card-header">
-            <h3>This is imaginary title</h3>
-            <p>Posted by Someone on Date</p>
+            <h3>
+                {{blog.name}}
+                </h3>
+            <p>Posted by {{blog.user.username}} on {{format_date blog.date_created}}</p>
         </div>
         <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#" class="stretched-link hidden">View Post</a>
+            <p class="card-text">{{blog.description}}</p>
+            <a href="/blogs/:{{blog.id}}" class="stretched-link"><button class="btn btn-primary">View Post</button></a>
         </div>
     </div>    
+    {{/each}}
 </div>
