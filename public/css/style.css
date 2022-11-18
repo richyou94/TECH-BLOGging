@@ -78,3 +78,8 @@
     text-decoration: none;
     color: grey;
 }
+
+.comment-card {
+    margin: 0;
+    margin-bottom: 10px;    
+}
