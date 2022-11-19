@@ -14,6 +14,7 @@
     </div>
   </div>
   <div class="hidden" id="blogId">{{blog.id}}</div>
+  {{#if logged_in}}
   <form class="comment-form card">
     <div class="mb-3">
       <label for="comment" class="form-label">Comment:</label>
@@ -23,39 +24,33 @@
       <button class="btn btn-primary btn-add-post" type="submit">Add Comment</button>
     </div>
   </form>
-
+  {{else}}
+  <form class="comment-form card">
+    <div class="mb-3">
+      <label for="comment" class="form-label">Comment:</label>
+      <textarea disabled for="comment" id="comment-text" class="form-control">Please login first before add comment.</textarea>
+    </div>
+    <div class="container">
+      <a class="stretched-link" href='/login'><button class="btn btn-primary btn-add-post">LOGIN</button></a>
+    </div>
+  </form>
+  {{/if}}
   <div class="card">
     <div class="card-header">
       <h4>Comments</h4>
     </div>
     <div class="card-body">
+      {{#each blog.comments as |comment|}}
       <div class="card comment-card">
         <div class="card-header comment-header">
-          <h6>Someone</h6>
-          <p>Date</p>
+          <h6>{{comment.user.username}}</h6>
+          <p>{{format_date comment.date_created}} </p>
         </div>
         <div class="card-body comment-body">
-          <p>text text text text text text text </p>
+          <p>{{comment.body}}</p>
         </div>
       </div>
-      <div class="card comment-card">
-        <div class="card-header comment-header">
-          <h6>Someone</h6>
-          <p>Date</p>
-        </div>
-        <div class="card-body comment-body">
-          <p>text text text text text text text </p>
-        </div>
-      </div>
-      <div class="card comment-card">
-        <div class="card-header comment-header">
-          <h6>Someone</h6>
-          <p>Date</p>
-        </div>
-        <div class="card-body comment-body">
-          <p>text text text text text text text </p>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </div>

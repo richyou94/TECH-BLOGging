@@ -1,15 +1,15 @@
-const commentAddHandler = async function(event) {
+const commentAddHandler = async (event) => {
     event.preventDefault();
 
     const blogId = document.querySelector('#blogId').textContent;
-    const comment = document.querySelector('#comment-text').value;
+    const comment = document.querySelector('#comment-text').value.trim();
     
     if (comment) {
         await fetch('/api/comment', {
             method: 'POST',
             body: JSON.stringify({
-                blogId,
-                comment
+                body: comment,
+                blog_id: blogId,
             }),
             headers: {
                 'Content-Type': 'application/json'
