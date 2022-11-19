@@ -2,6 +2,18 @@
 
 ## Main Contributor: Richard You
 
+
+## Link to deployed application
+https://techblog-by-richard.herokuapp.com/ (deployed github application)
+
+https://github.com/YichanYouRichard/TECH-BLOGging (github repository link)
+
+## Screenshots
+![Sample image 1 of 4 TECHBLOG website](./public/assets/1.png)
+![Sample image 2 of 4 TECHBLOG website](./public/assets/2.png)
+![Sample image 3 of 4 TECHBLOG website](./public/assets/3.png)
+![Sample image 4 of 4 TECHBLOG website](./public/assets/4.png)
+
 ## Table of Contents
 
   - [Project-Description](#project-description)
