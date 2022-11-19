@@ -8,6 +8,7 @@
                 <div class="mb-3">
                     <label for="title" class="form-label">Blog Title</label>
                     <input for="title" id="update-title" value="{{blog.name}}" class="form-control">
+                    <div class="hidden" id="update-blogId">{{blog.id}}</div>                    
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Content</label>
@@ -19,3 +20,4 @@
     </div>    
 </div>
 
+<script src="./js/updateBlog.js"></script>

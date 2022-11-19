@@ -117,3 +117,11 @@
     margin:0px;
     color: red;
 }
+
+.button-container {
+    display: inline-flex;
+    justify-content: space-between;
+}
+.grouped-button .btn {
+    margin: 5px;
+}
