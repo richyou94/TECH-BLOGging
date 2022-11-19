@@ -41,7 +41,7 @@ router.get("/blog/:id", async (req, res) => {
     if (blogData) {
       const blog = blogData.get({ plain: true });
 
-      res.render("view-blog", { blog, logged_in: req.session.logged_in });
+      res.render("view-blog", { blog, logged_in: req.session.logged_in, req_id: req.session.user_id });
     } else {
       res.status(404).end();
     }

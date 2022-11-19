@@ -103,3 +103,17 @@
 .comment-form {
     padding: 10px;
 }
+
+.text-right {
+    text-align: right;
+}
+
+.true-user {
+    width: 10rem;
+}
+
+.delete-message {
+    padding-top:10px;
+    margin:0px;
+    color: red;
+}

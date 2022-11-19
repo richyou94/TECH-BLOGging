@@ -15,44 +15,66 @@
   </div>
   <div class="hidden" id="blogId">{{blog.id}}</div>
   {{#if logged_in}}
-  <form class="comment-form card">
-    <div class="mb-3">
-      <label for="comment" class="form-label">Comment:</label>
-      <textarea for="comment" id="comment-text" class="form-control"></textarea>
-    </div>
-    <div class="container align-right">
-      <button class="btn btn-primary btn-add-post" type="submit">Add Comment</button>
-    </div>
-  </form>
+    <form class="comment-form card">
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment:</label>
+        <textarea
+          for="comment"
+          id="comment-text"
+          class="form-control"
+        ></textarea>
+      </div>
+      <div class="container align-right">
+        <button class="btn btn-primary btn-add-post" type="submit">Add Comment</button>
+      </div>
+    </form>
   {{else}}
-  <form class="comment-form card">
-    <div class="mb-3">
-      <label for="comment" class="form-label">Comment:</label>
-      <textarea disabled for="comment" id="comment-text" class="form-control">Please login first before add comment.</textarea>
-    </div>
-    <div class="container">
-      <a class="stretched-link" href='/login'><button class="btn btn-primary btn-add-post">LOGIN</button></a>
-    </div>
-  </form>
+    <form class="comment-form card">
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment:</label>
+        <textarea
+          disabled
+          for="comment"
+          id="comment-text"
+          class="form-control"
+        >Please login first before add comment.</textarea>
+      </div>
+      <div class="container">
+        <a class="stretched-link" href="/login"><button
+            class="btn btn-primary btn-add-post"
+          >LOGIN</button></a>
+      </div>
+    </form>
   {{/if}}
   <div class="card">
     <div class="card-header">
       <h4>Comments</h4>
+      <div class="hidden" id="current-user-id">{{req_id}}</div>
     </div>
-    <div class="card-body">
+    <div class="card-body comment-container">
       {{#each blog.comments as |comment|}}
-      <div class="card comment-card">
-        <div class="card-header comment-header">
-          <h6>{{comment.user.username}}</h6>
-          <p>{{format_date comment.date_created}} </p>
+        <div class="card comment-card">
+          <div class="card-header comment-header">
+            <h6>{{comment.user.username}}</h6>
+            <p>{{format_date comment.date_created}} </p>
+          </div>
+          <div class="card-body comment-body">
+            <p>{{comment.body}}</p>
+            <p class="hidden" id="comment-user-id">{{comment.user_id}}</p>
+            <div class="text-right">
+              <button
+                class="btn btn-danger true-user"
+                type="button"
+                value="{{comment.id}}"
+              >Delete</button>
+              <p class="hidden delete-message">Only User who wrote comment can delete the comment</p>
+            </div>
+          </div>
         </div>
-        <div class="card-body comment-body">
-          <p>{{comment.body}}</p>
-        </div>
-      </div>
       {{/each}}
     </div>
   </div>
 </div>
 
 <script src="./js/addcomment.js"></script>
+<script src="./js/deleteComment.js"></script>
