@@ -83,3 +83,23 @@
     margin: 0;
     margin-bottom: 10px;    
 }
+
+.comment-header,
+.comment-header h6,
+.comment-header p {
+    display:inline-flex;
+    padding: 5px;
+    padding-bottom:2px;
+    margin-bottom:0;
+}
+.comment-header {
+    justify-content: space-between;
+    padding: auto;
+}
+
+.comment-header p {
+    font-size: 0.8rem;
+}
+.comment-form {
+    padding: 10px;
+}
