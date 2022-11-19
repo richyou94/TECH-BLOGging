@@ -2,15 +2,21 @@
     <div class="container align-right">
     <a href="/dashboard/newblog"><button class="btn btn-primary btn-add-post">Add POST</button></a>
     </div>
-    <h1 class="dashboard-nopost">There is no post!</h1>
+    
+    {{#each blogs as |blog|}}
     <div class="card">
         <div class="card-header">
-            <h3>This is imaginary title</h3>
-            <p>Posted by Someone on Date</p>
+            <h3>
+                {{blog.name}}
+                </h3>
+            <p>Posted by {{blog.user.username}} on {{format_date blog.date_created}}</p>
         </div>
         <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#" class="stretched-link hidden">View Post</a>
+            <p class="card-text">{{blog.description}}</p>
+            <a href="/blog/{{blog.id}}"><button class="btn btn-primary">View Post</button></a>
+            <a href="/dashboard/{{blog.id}}"><button class="btn btn-primary">Update Post</button></a>
+            <button class="btn btn-danger">Delete</button>
         </div>
     </div>    
+    {{/each}}
 </div>

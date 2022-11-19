@@ -13,8 +13,8 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const blogs = blogData.map((blog) => blog.get({ plain: true }));
-
+    let blogs = blogData.map((blog) => blog.get({ plain: true }));
+    blogs = blogs.reverse();
     res.render("homepage", {
       blogs,
       logged_in: req.session.logged_in,
