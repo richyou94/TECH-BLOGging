@@ -30,7 +30,7 @@ router.get("/blog/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ["username"],
         },
         // {
         //   model: Comment,
@@ -42,7 +42,7 @@ router.get("/blog/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username', 'id'],
+          attributes: ["username", "id"],
         },
       ],
       where: { blog_id: req.params.id },
@@ -63,7 +63,12 @@ router.get("/blog/:id", async (req, res) => {
     if (blogData) {
       const blog = blogData.get({ plain: true });
 
-      res.render("view-blog", { blog, logged_in: req.session.logged_in, req_id: req.session.user_id, comments });
+      res.render("view-blog", {
+        blog,
+        logged_in: req.session.logged_in,
+        req_id: req.session.user_id,
+        comments,
+      });
     } else {
       res.status(404).end();
     }

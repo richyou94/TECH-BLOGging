@@ -1,33 +1,31 @@
-const router = require('express').Router();
-const { Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.post('/', withAuth, async (req, res) => {
-    try {
-        const newComment = await Comment.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
-        res.json(newComment);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+router.post("/", withAuth, async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.json(newComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
-    try {
-     Comment.destroy({
-            where: {
-                id: req.params.id,
-            },
-        });
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    Comment.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
 
-        
-            res.status(200).end();
-        
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    res.status(200).end();
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

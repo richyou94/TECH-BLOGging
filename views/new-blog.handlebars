@@ -1,22 +1,27 @@
 <div class="container-fluid main-container">
-    <div class="card">
-        <div class="card-header">
-            <h3>New BLOG POST</h3>
+  <div class="card">
+    <div class="card-header">
+      <h3>New BLOG POST</h3>
+    </div>
+    <div class="card-body">
+      <form class="newblog-form">
+        <div class="mb-3">
+          <label for="title" class="form-label">Blog Title</label>
+          <input for="title" id="newblog-title" class="form-control" />
         </div>
-        <div class="card-body">
-            <form class="newblog-form">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Blog Title</label>
-                    <input for="title" id="newblog-title" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Content</label>
-                    <textarea for="description" type="text" id="newblog-description" class="form-control"></textarea>
-                </div>
-                <button class="btn btn-primary btn-newblog" type="submit">POST BLOG</button>
-            </form>
+        <div class="mb-3">
+          <label for="description" class="form-label">Content</label>
+          <textarea
+            for="description"
+            type="text"
+            id="newblog-description"
+            class="form-control"
+          ></textarea>
         </div>
-    </div>    
+        <button class="btn btn-primary btn-newblog" type="submit">POST BLOG</button>
+      </form>
+    </div>
+  </div>
 </div>
 
 <script src="./js/newblog.js"></script>

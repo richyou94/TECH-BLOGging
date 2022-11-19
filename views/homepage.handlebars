@@ -1,17 +1,22 @@
 <div class="container-fluid main-container">
-    {{#each blogs as |blog|}}
+  {{#each blogs as |blog|}}
     <div class="card">
-        <div class="card-header">
-            <h3>
-                {{blog.name}}
-                </h3>
-            <p>Posted by {{blog.user.username}} on {{format_date blog.date_created}}</p>
-        </div>
-        <div class="card-body">
-            <p class="card-text">{{blog.description}}</p>
-            <a href="/blog/{{blog.id}}" class="stretched-link"><button class="btn btn-primary">View Post</button></a>
-        </div>
-    </div>    
-    {{/each}}
-    <h1></h1>
+      <div class="card-header">
+        <h3>
+          {{blog.name}}
+        </h3>
+        <p>Posted by
+          {{blog.user.username}}
+          on
+          {{format_date blog.date_created}}</p>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{blog.description}}</p>
+        <a href="/blog/{{blog.id}}" class="stretched-link"><button
+            class="btn btn-primary"
+          >View Post</button></a>
+      </div>
+    </div>
+  {{/each}}
+  <h1></h1>
 </div>

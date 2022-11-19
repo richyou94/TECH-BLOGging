@@ -1,23 +1,28 @@
 <div class="container-fluid main-container">
-    <div class="card">
-        <div class="card-header">
-            <h3>LOGIN</h3>
+  <div class="card">
+    <div class="card-header">
+      <h3>LOGIN</h3>
+    </div>
+    <div class="card-body">
+      <form class="login-form">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input for="username" id="login-username" class="form-control" />
         </div>
-        <div class="card-body">
-            <form class="login-form">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input for="username" id="login-username" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input for="password" type="password" id="login-password" class="form-control">
-                </div>
-                <button class="btn btn-primary btn-login" type="submit">LOGIN</button>
-            </form>
-            <a href="/signup" class="signup-link"><h6>Sign up instead</h6></a>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            for="password"
+            type="password"
+            id="login-password"
+            class="form-control"
+          />
         </div>
-    </div>    
+        <button class="btn btn-primary btn-login" type="submit">LOGIN</button>
+      </form>
+      <a href="/signup" class="signup-link"><h6>Sign up instead</h6></a>
+    </div>
+  </div>
 </div>
 
 <script src="./js/login.js"></script>
