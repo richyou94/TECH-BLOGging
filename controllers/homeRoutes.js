@@ -32,16 +32,38 @@ router.get("/blog/:id", async (req, res) => {
           model: User,
           attributes: ['username'],
         },
-        {
-          model: Comment,
-          include: [User],
-        },
+        // {
+        //   model: Comment,
+        //   include: [User],
+        // },
       ],
     });
+    const commentData = await Comment.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username', 'id'],
+        },
+      ],
+      where: { blog_id: req.params.id },
+    });
+
+    let comments = commentData.map((comment) => comment.get({ plain: true }));
+    comments = comments.reverse();
+    // const commentData = await Comment.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['username', 'id'],
+    //     },
+    //   ],
+    //   where: { blog_id: req.params.id },
+    // )};
+
     if (blogData) {
       const blog = blogData.get({ plain: true });
 
-      res.render("view-blog", { blog, logged_in: req.session.logged_in, req_id: req.session.user_id });
+      res.render("view-blog", { blog, logged_in: req.session.logged_in, req_id: req.session.user_id, comments });
     } else {
       res.status(404).end();
     }

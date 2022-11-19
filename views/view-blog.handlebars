@@ -52,7 +52,7 @@
       <div class="hidden" id="current-user-id">{{req_id}}</div>
     </div>
     <div class="card-body comment-container">
-      {{#each blog.comments as |comment|}}
+      {{#each comments as |comment|}}
         <div class="card comment-card">
           <div class="card-header comment-header">
             <h6>{{comment.user.username}}</h6>
